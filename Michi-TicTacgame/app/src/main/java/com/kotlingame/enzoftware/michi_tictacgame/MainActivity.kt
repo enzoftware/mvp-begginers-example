@@ -165,7 +165,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /*fun computerPlayer(){
+    fun computerPlayer(){
         var emptyCells = ArrayList<Int>()
         for(cellID in 1 .. 9){
             if( !( player1.contains(cellID) || player2.contains(cellID) )){
@@ -174,7 +174,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val r = Random()
-        val randIndex = r.nextInt(emptyCells.size - 0)+0
+        val randIndex = r.nextInt(emptyCells.size)
         val cellID = emptyCells[randIndex]
 
         var buSelected: Button ?
@@ -197,5 +197,5 @@ class MainActivity : AppCompatActivity() {
         playGame(cellID,buSelected)
 
     }
-*/
+
 }
