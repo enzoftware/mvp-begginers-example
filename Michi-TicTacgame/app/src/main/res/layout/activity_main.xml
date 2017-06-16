@@ -8,6 +8,16 @@
     android:gravity="center"
     tools:context="com.kotlingame.enzoftware.michi_tictacgame.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Partidas : "
+        android:textColor="@color/white"
+        android:textSize="20pt"
+        android:layout_marginBottom="20pt"
+        android:gravity="center"
+        />
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -97,4 +107,15 @@
             android:layout_margin="5pt"
             android:onClick="buClick" />
     </TableRow>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jugar otra vez"
+        android:enabled="false"
+        android:backgroundTint="@color/darkred"
+        android:textColor="@color/white"
+        android:textSize="12pt"
+        android:layout_marginTop="15pt"
+        />
 </TableLayout>
