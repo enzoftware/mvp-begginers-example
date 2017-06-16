@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     var button8:Button? = null
     var button9:Button? = null
 
+    var playAgainButton:Button? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,7 +35,31 @@ class MainActivity : AppCompatActivity() {
         button7 = findViewById(R.id.bu7) as Button
         button8 = findViewById(R.id.bu8) as Button
         button9 = findViewById(R.id.bu9) as Button
+        playAgainButton = findViewById(R.id.playAgainButton) as Button
     }
+/*
+    fun playAgain(){
+        button1!!.isEnabled = true
+        //button1!!.setBackgroundResource(R.color.whitebackground)
+        button2!!.isEnabled = true
+        //button2!!.setBackgroundResource(R.color.whitebackground)
+        button3!!.isEnabled = true
+        //button3!!.setBackgroundResource(R.color.whitebackground)
+        button4!!.isEnabled = true
+        //button4!!.setBackgroundResource(R.color.whitebackground)
+        button5!!.isEnabled = true
+        //button5!!.setBackgroundResource(R.color.whitebackground)
+        button6!!.isEnabled = true
+        //button6!!.setBackgroundResource(R.color.whitebackground)
+        button7!!.isEnabled = true
+        //button7!!.setBackgroundResource(R.color.whitebackground)
+        button8!!.isEnabled = true
+        //button8!!.setBackgroundResource(R.color.whitebackground)
+        button9!!.isEnabled = true
+        //button9!!.setBackgroundResource(R.color.whitebackground)
+        playAgainButton!!.isEnabled = false
+    }
+*/
 
     fun buClick(view: View){
         val buSelected:Button = view as Button
@@ -74,8 +100,10 @@ class MainActivity : AppCompatActivity() {
         }
         buSelected!!.isEnabled = false
         var winner = checkWinner()
-        if(winner != -1)
-            Toast.makeText(this,"The winner is player $winner",Toast.LENGTH_LONG).show()
+        if(winner != -1) {
+            Toast.makeText(this, "The winner is player $winner", Toast.LENGTH_LONG).show()
+            playAgainButton!!.isEnabled = true
+        }
     }
 
     fun checkWinner():Int{
@@ -185,6 +213,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun computerPlayer(){
+
         var emptyCells = ArrayList<Int>()
         for(cellID in 1 .. 9){
             if( !( player1.contains(cellID) || player2.contains(cellID) )){
@@ -192,29 +221,34 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val r = Random()
-        val randIndex = r.nextInt(emptyCells.size)
-        val cellID = emptyCells[randIndex]
+        if(emptyCells.isNotEmpty()){
 
-        var buSelected: Button ?
-
-        when(cellID){
-            1-> buSelected= button1
-            2-> buSelected= button2
-            3-> buSelected= button3
-            4-> buSelected= button4
-            5-> buSelected= button5
-            6-> buSelected= button6
-            7-> buSelected= button7
-            8-> buSelected= button8
-            9-> buSelected= button9
-            else->{
-                buSelected = button1
+            val r = Random()
+            val randIndex = r.nextInt(emptyCells.size)
+            val cellID = emptyCells[randIndex]
+            var buSelected: Button ?
+            when(cellID){
+                1-> buSelected= button1
+                2-> buSelected= button2
+                3-> buSelected= button3
+                4-> buSelected= button4
+                5-> buSelected= button5
+                6-> buSelected= button6
+                7-> buSelected= button7
+                8-> buSelected= button8
+                9-> buSelected= button9
+                else->{
+                    buSelected = button1
+                }
             }
+            playGame(cellID,buSelected)
+        }else{
+            Toast.makeText(this,"Empate papu :V ",Toast.LENGTH_SHORT).show()
+            playAgainButton!!.isEnabled = true
         }
 
-        playGame(cellID,buSelected)
-
     }
+
+
 
 }

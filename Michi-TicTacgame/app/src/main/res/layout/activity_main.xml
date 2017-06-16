@@ -109,13 +109,14 @@
     </TableRow>
 
     <Button
+        android:id="@+id/playAgainButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jugar otra vez"
-        android:enabled="false"
-        android:backgroundTint="@color/darkred"
-        android:textColor="@color/white"
-        android:textSize="12pt"
         android:layout_marginTop="15pt"
-        />
+        android:backgroundTint="@color/darkred"
+        android:enabled="false"
+        android:onClick="playAgain"
+        android:text="Jugar otra vez"
+        android:textColor="@color/white"
+        android:textSize="12pt" />
 </TableLayout>
