@@ -62,13 +62,13 @@ class MainActivity : AppCompatActivity() {
 
         if(ActivePlayer ==1){
             buSelected!!.text = "X"
-            buSelected!!.setBackgroundColor(Color.GREEN)
+            buSelected.setBackgroundResource(R.color.orange)
             player1.add(cellID)
             ActivePlayer = 2
             computerPlayer()
         }else{
             buSelected!!.text = "O"
-            buSelected!!.setBackgroundColor(Color.CYAN)
+            buSelected!!.setBackgroundResource(R.color.blue)
             player2.add(cellID)
             ActivePlayer = 1
         }
