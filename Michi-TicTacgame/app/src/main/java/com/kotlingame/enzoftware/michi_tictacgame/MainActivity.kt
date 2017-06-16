@@ -11,9 +11,28 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    var button1:Button? = null
+    var button2:Button? = null
+    var button3:Button? = null
+    var button4:Button? = null
+    var button5:Button? = null
+    var button6:Button? = null
+    var button7:Button? = null
+    var button8:Button? = null
+    var button9:Button? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        button1 = findViewById(R.id.bu1) as Button
+        button2 = findViewById(R.id.bu2) as Button
+        button3 = findViewById(R.id.bu3) as Button
+        button4 = findViewById(R.id.bu4) as Button
+        button5 = findViewById(R.id.bu5) as Button
+        button6 = findViewById(R.id.bu6) as Button
+        button7 = findViewById(R.id.bu7) as Button
+        button8 = findViewById(R.id.bu8) as Button
+        button9 = findViewById(R.id.bu9) as Button
     }
 
     fun buClick(view: View){
@@ -39,21 +58,21 @@ class MainActivity : AppCompatActivity() {
     var player2 = ArrayList<Int>()
     var ActivePlayer:Int = 1
 
-    fun playGame(cellID:Int , buSelected:Button){
+    fun playGame(cellID:Int , buSelected:Button?){
 
         if(ActivePlayer ==1){
-            buSelected.text = "X"
-            buSelected.setBackgroundColor(Color.GREEN)
+            buSelected!!.text = "X"
+            buSelected!!.setBackgroundColor(Color.GREEN)
             player1.add(cellID)
             ActivePlayer = 2
-            //computerPlayer()
+            computerPlayer()
         }else{
-            buSelected.text = "O"
-            buSelected.setBackgroundColor(Color.CYAN)
+            buSelected!!.text = "O"
+            buSelected!!.setBackgroundColor(Color.CYAN)
             player2.add(cellID)
             ActivePlayer = 1
         }
-        buSelected.isEnabled = false
+        buSelected!!.isEnabled = false
         var winner = checkWinner()
         if(winner != -1)
             Toast.makeText(this,"The winner is player $winner",Toast.LENGTH_LONG).show()
@@ -180,17 +199,17 @@ class MainActivity : AppCompatActivity() {
         var buSelected: Button ?
 
         when(cellID){
-            1-> buSelected= bu1
-            2-> buSelected= bu2
-            3-> buSelected= bu3
-            4-> buSelected= bu4
-            5-> buSelected= bu5
-            6-> buSelected= bu6
-            7-> buSelected= bu7
-            8-> buSelected= bu8
-            9-> buSelected= bu9
+            1-> buSelected= button1
+            2-> buSelected= button2
+            3-> buSelected= button3
+            4-> buSelected= button4
+            5-> buSelected= button5
+            6-> buSelected= button6
+            7-> buSelected= button7
+            8-> buSelected= button8
+            9-> buSelected= button9
             else->{
-                buSelected = bu1
+                buSelected = button1
             }
         }
 
