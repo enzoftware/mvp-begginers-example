@@ -1,10 +1,13 @@
 package com.kotlingame.enzoftware.michi_tictacgame
 
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.kotlingame.enzoftware.michi_tictacgame.R.id.*
 import java.util.*
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         button1 = findViewById(R.id.bu1) as Button
         button2 = findViewById(R.id.bu2) as Button
@@ -37,29 +41,11 @@ class MainActivity : AppCompatActivity() {
         button9 = findViewById(R.id.bu9) as Button
         playAgainButton = findViewById(R.id.playAgainButton) as Button
     }
-/*
-    fun playAgain(){
-        button1!!.isEnabled = true
-        //button1!!.setBackgroundResource(R.color.whitebackground)
-        button2!!.isEnabled = true
-        //button2!!.setBackgroundResource(R.color.whitebackground)
-        button3!!.isEnabled = true
-        //button3!!.setBackgroundResource(R.color.whitebackground)
-        button4!!.isEnabled = true
-        //button4!!.setBackgroundResource(R.color.whitebackground)
-        button5!!.isEnabled = true
-        //button5!!.setBackgroundResource(R.color.whitebackground)
-        button6!!.isEnabled = true
-        //button6!!.setBackgroundResource(R.color.whitebackground)
-        button7!!.isEnabled = true
-        //button7!!.setBackgroundResource(R.color.whitebackground)
-        button8!!.isEnabled = true
-        //button8!!.setBackgroundResource(R.color.whitebackground)
-        button9!!.isEnabled = true
-        //button9!!.setBackgroundResource(R.color.whitebackground)
-        playAgainButton!!.isEnabled = false
+
+    fun playAgain(activity:Activity){
+
     }
-*/
+
 
     fun buClick(view: View){
         val buSelected:Button = view as Button

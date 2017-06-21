@@ -16,6 +16,7 @@
         android:textSize="20pt"
         android:layout_marginBottom="20pt"
         android:gravity="center"
+        android:id="@+id/textPartidas"
         />
 
     <TableRow
