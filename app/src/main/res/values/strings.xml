@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="name_empty_error">Empty name :(</string>
+    <string name="surname_empty_error">Surname empty :(</string>
+    <string name="user_saved">User saved !!! :D</string>
+    <string name="no_user_error">No user :(</string>
 </resources>
